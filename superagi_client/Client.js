@@ -1,6 +1,6 @@
-const { validateApiKey } = require('./lib/auth');
-const Superagi = require('./lib/superagi');
-const { AgentConfig, AgentUpdateConfig, AgentRun, AgentRunFilter } = require('./types');
+const { validateApiKey } = require('./lib/Auth');
+const Superagi = require('./lib/Superagi');
+const { AgentConfig, AgentUpdateConfig, AgentRun, AgentRunFilter } = require('./Types');
 
 class Client {
     constructor({

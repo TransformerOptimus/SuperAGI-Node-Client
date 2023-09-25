@@ -1,5 +1,5 @@
 const axios = require('axios');
-const { httpStatusCodeToException } = require('../exceptions');
+const { httpStatusCodeToException } = require('../Exceptions');
 const humps = require('humps')
 
 class Superagi {

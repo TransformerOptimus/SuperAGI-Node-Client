@@ -1,5 +1,5 @@
 const axios = require('axios');
-const { UnauthorizedException } = require('../exceptions');
+const { UnauthorizedException } = require('../Exceptions');
 
 async function validateApiKey(baseUrl, apiKey) {
     try {
