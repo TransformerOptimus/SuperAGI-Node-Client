@@ -9,10 +9,13 @@ class Superagi {
     }
 
     async createAgent(agentConfig) {
+        agentConfig = humps.decamelizeKeys(agentConfig)
+        agentConfig.LTM_DB = agentConfig.ltm_db
+        delete agentConfig.ltm_db
         try {
             const response = await axios.post(
                 `${this.baseUrl}/api/v1/agent`,
-                humps.decamelizeKeys(agentConfig),
+                agentConfig,
                 { headers: { "X-api-key": this.apiKey } }
             );
             return humps.camelizeKeys(response.data);
@@ -25,10 +28,13 @@ class Superagi {
     }
 
     async updateAgent(agentId, agentUpdateConfig) {
+        agentUpdateConfig = humps.decamelizeKeys(agentUpdateConfig)
+        agentUpdateConfig.LTM_DB = agentUpdateConfig.ltm_db
+        delete agentUpdateConfig.ltm_db
         try {
             const response = await axios.put(
                 `${this.baseUrl}/api/v1/agent/${agentId}`,
-                humps.decamelizeKeys(agentUpdateConfig),
+                agentUpdateConfig,
                 { headers: { "X-api-key": this.apiKey } }
             );
             return humps.camelizeKeys(response.data);

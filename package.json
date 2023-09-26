@@ -2,7 +2,7 @@
   "name": "superagi_client",
   "version": "0.0.1",
   "description": "Node.js package for Superagi",
-  "main": "client.js",
+  "main": "superagi_client/index.js",
   "repository": {
     "type": "git",
     "url": "https://app.superagi.com"
